@@ -77,6 +77,86 @@ namespace Homework_Theme_04
 
             //#endregion
 
+            #region Сложение (вычитание) матриц
+
+            Console.WriteLine("Matrix addition (substraction): ");
+            Console.WriteLine("Number of rows and columns of 1st matrix must be the same as 2nd matrix");
+
+            Console.WriteLine("Enter number of rows:");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            while (n <= 0)
+            {
+                Console.WriteLine("Incorrect \'n\'. Try again.");
+                n = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("Enter number of columns:");
+            m = Convert.ToInt32(Console.ReadLine());
+
+            while (m <= 0)
+            {
+                Console.WriteLine("Incorrect \'m\'. Try again.");
+                n = Convert.ToInt32(Console.ReadLine());
+            }
+
+            int[,] A = new int[n, m];
+            int[,] B = new int[n, m];
+            int[,] C = new int[n, m];
+
+            Console.WriteLine("Matrix A: ");
+
+            for (int i = 0; i < A.GetLength(0); i++)
+            {
+                for (int j = 0; j < A.GetLength(1); j++)
+                {
+                    A[i, j] = rnd.Next(-10, 11);
+                    Console.Write($"{A[i, j],3} ");
+                }
+                Console.WriteLine("");
+            }
+
+            Console.WriteLine("Matrix B:");
+
+            for(int i = 0; i < A.GetLength(0); i++)
+            {
+                for(int j = 0; j < A.GetLength(1); j++)
+                {
+                    B[i, j] = rnd.Next(-10, 11);
+                    Console.Write($"{B[i, j],3} ");
+                }
+                Console.WriteLine("");
+            }
+
+            Console.WriteLine("Matrix C = A + B:");
+
+            for (int i = 0; i < A.GetLength(0); i++)
+            {
+                for (int j = 0; j < A.GetLength(1); j++)
+                {
+                    C[i, j] = A[i, j] + B[i, j];
+                    Console.Write($"{C[i, j],3} ");
+                }
+                Console.WriteLine("");
+            }
+
+            Console.WriteLine("Matrix C = A - B:");
+
+            for (int i = 0; i < A.GetLength(0); i++)
+            {
+                for (int j = 0; j < A.GetLength(1); j++)
+                {
+                    C[i, j] = A[i, j] - B[i, j];
+                    Console.Write($"{C[i, j],3} ");
+                }
+                Console.WriteLine("");
+            }
+
+
+            #endregion
+
+
+
             #region Умножение двух матриц.
 
 
@@ -134,7 +214,6 @@ namespace Homework_Theme_04
             int[,] matrixC = new int[n, l];
 
             Console.WriteLine("Matrix A: ");
-
 
             for (int i = 0; i < matrixA.GetLength(0); i++)
             {
