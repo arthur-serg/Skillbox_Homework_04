@@ -163,7 +163,6 @@ namespace Homework_Theme_04
             {
                 for (int j = 0; j < matrixB.GetLength(1); j++)
                 {
-                    matrixC[i, j] = 0;
                     for (int s = 0; s < matrixB.GetLength(0); s++)
                     {
                         matrixC[i, j] = matrixC[i, j] + matrixA[i,s] * matrixB[s,j];
